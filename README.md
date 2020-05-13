@@ -11,6 +11,7 @@ Trello: https://trello.com/jkcommunity
 1. Install home-brew if you haven't
 2. Install `npm` and `nodejs`: `brew install node`
 3. Install `mysql`: `brew install mysql@5.6`
+1. In case of error: `MySQL: ERROR 1006 (HY000) Can't create database`, roboot your Mac and then run `mysql_secure_installation`.
 
 ```shell
 brew services start mysql@5.6
