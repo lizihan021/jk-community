@@ -11,8 +11,20 @@ Trello: https://trello.com/jkcommunity
 1. Install home-brew if you haven't
 2. Install `npm` and `nodejs`: `brew install node`
 3. Install `mysql`: `brew install mysql@5.6`
-1. In case of error: `MySQL: ERROR 1006 (HY000) Can't create database`, roboot your Mac and then run `mysql_secure_installation`.
+1. Run `brew services start mysql@5.6`
+1. Roboot your Mac and then run `mysql_secure_installation`.
 
+```shell
+# login to mysql to create sample database
+mysql -u root -p
+# (your password created in previous step)
+> create database qmplus;
+> use qmplus;
+> source server/db/qmplus.sql;
+> \q
+```
+
+<!--
 ```shell
 brew services start mysql@5.6
 mysqladmin -u root password Aa@6447985
@@ -24,6 +36,7 @@ Aa@6447985
 > source server/db/qmplus.sql;
 > \q
 ```
+-->
 
 
 
