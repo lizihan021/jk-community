@@ -12,7 +12,7 @@ Trello: https://trello.com/jkcommunity
 2. Install `npm` and `nodejs`: `brew install node`
 3. Install `mysql`: `brew install mysql@5.6`
 1. Run `brew services start mysql@5.6`
-1. Roboot your Mac and then run `mysql_secure_installation`.
+1. Roboot your Mac and then run `mysql_secure_installation`. **Note that You must set Aa@6447985 as password**
 
 ```shell
 # login to mysql to create sample database
