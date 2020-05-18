@@ -615,3 +615,87 @@ DROP VIEW IF EXISTS `authority_menu`;
 CREATE ALGORITHM = UNDEFINED DEFINER = `root`@`localhost` SQL SECURITY DEFINER VIEW `authority_menu` AS select `sys_base_menus`.`id` AS `id`,`sys_base_menus`.`created_at` AS `created_at`,`sys_base_menus`.`updated_at` AS `updated_at`,`sys_base_menus`.`deleted_at` AS `deleted_at`,`sys_base_menus`.`menu_level` AS `menu_level`,`sys_base_menus`.`parent_id` AS `parent_id`,`sys_base_menus`.`path` AS `path`,`sys_base_menus`.`name` AS `name`,`sys_base_menus`.`hidden` AS `hidden`,`sys_base_menus`.`component` AS `component`,`sys_base_menus`.`title` AS `title`,`sys_base_menus`.`icon` AS `icon`,`sys_base_menus`.`nick_name` AS `nick_name`,`sys_base_menus`.`sort` AS `sort`,`sys_authority_menus`.`sys_authority_authority_id` AS `authority_id`,`sys_authority_menus`.`sys_base_menu_id` AS `menu_id`,`sys_base_menus`.`keep_alive` AS `keep_alive`,`sys_base_menus`.`default_menu` AS `default_menu` from (`sys_authority_menus` join `sys_base_menus` on((`sys_authority_menus`.`sys_base_menu_id` = `sys_base_menus`.`id`)));
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+-- ----------------------------
+-- Table structure for post_images
+-- ----------------------------
+DROP TABLE IF EXISTS `post_images`;
+CREATE TABLE `post_images`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `link1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `link2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `link3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `link4` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `link5` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `link6` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `link7` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `link8` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `link9` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for post_items
+-- ----------------------------
+DROP TABLE IF EXISTS `post_items`;
+CREATE TABLE `post_items`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `price` int(10) UNSIGNED NOT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for posts
+-- ----------------------------
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE `posts`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `image_id` bigint(20) UNSIGNED,
+  `item_id` bigint(20) UNSIGNED,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  FOREIGN KEY (`image_id`) REFERENCES post_images(`id`),
+  FOREIGN KEY (`item_id`) REFERENCES post_items(`id`),
+  FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`),
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for comments
+-- ----------------------------
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE `comments`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `post_id` bigint(20) UNSIGNED,
+  PRIMARY KEY (`id`) USING BTREE,
+  FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for user_create_posts
+-- ----------------------------
+DROP TABLE IF EXISTS `user_create_posts`;
+CREATE TABLE `user_create_posts`  (
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `post_id` bigint(20) UNSIGNED NOT NULL,
+  FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`),
+  FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for post_comments
+-- ----------------------------
+DROP TABLE IF EXISTS `post_comments`;
+CREATE TABLE `post_comments`  (
+  `post_id` bigint(20) UNSIGNED NOT NULL,
+  `comment_id` bigint(20) UNSIGNED NOT NULL,
+  FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
+  FOREIGN KEY (`comment_id`) REFERENCES comments(`id`),
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
