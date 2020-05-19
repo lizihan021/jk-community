@@ -616,6 +616,76 @@ CREATE ALGORITHM = UNDEFINED DEFINER = `root`@`localhost` SQL SECURITY DEFINER V
 
 SET FOREIGN_KEY_CHECKS = 1;
 
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'QMPlusUser',
+  `header_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'http://www.henrongyi.top/avatar/lufu.jpg',
+  `phone_data` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  'email' varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_users_deleted_at`(`deleted_at`) USING BTREE,  -- TODO: Zihan you may want to check this along with line 558
+  INDEX `idx_sys_users_deleted_at`(`deleted_at`) USING BTREE 
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES (
+	001,
+	'2019-09-13 17:23:46', 
+	'2020-05-06 16:09:15', 
+	NULL, 
+	'Zihan', 
+	'ZihanLoveWen', 
+	'Zihan Li', 
+	'http://qmplusimg.henrongyi.top/15887525450B978439-F04A-4a09-A8D3-DE7DE2677142.png', NULL, NULL);
+INSERT INTO `users` VALUES (
+	002, 
+	'2019-09-13 17:27:29', 
+	'2019-09-13 17:27:29', 
+	NULL, 
+	'Wen', 
+	'WenLoveZihan', 
+	'Wen He', 
+	'http://qmplusimg.henrongyi.top/1572075907logo.png', NULL, NULL);
+INSERT INTO `users` VALUES (
+	003,
+	'2019-09-17 17:27:29', 
+	'2019-09-17 17:27:29', 
+	NULL, 
+	'skywalker', 
+	'iamyourfather', 
+	'Luke Skywalker',
+	'http://qmplusimg.henrongyi.top/1572075907logo.png', NULL, NULL);
+INSERT INTO `users` VALUES (
+	004,
+	'2019-09-18 17:27:29', 
+	'2019-09-18 17:27:29', 
+	'2020-05-06 16:09:15', 
+	'captain', 
+	'iamyourfathertoo', 
+	'Jack Sparrow',
+	'http://qmplusimg.henrongyi.top/1572075907logo.png', NULL, NULL);
+INSERT INTO `users` VALUES (
+	005,
+	'2019-09-19 17:27:29', 
+	'2019-09-19 17:27:29', 
+	NULL, 
+	'paul', 
+	'heyjude', 
+	'Paul McCartney',
+	'http://qmplusimg.henrongyi.top/1572075907logo.png', NULL, NULL);
+
 -- ----------------------------
 -- Table structure for post_images
 -- ----------------------------
