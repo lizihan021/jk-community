@@ -647,7 +647,7 @@ INSERT INTO `users` VALUES (
 	'Zihan', 
 	'ZihanLoveWen', 
 	'Zihan Li', 
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/048SpongeBob_海绵宝宝BQB/SpongeBob00001.jpg', NULL, NULL);
+	'https://github.com/zhaoolee/ChineseBQB/blob/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00001.jpg?raw=true', NULL, NULL);
 INSERT INTO `users` VALUES (
 	0002, 
 	'2019-09-13 17:27:29', 
@@ -656,7 +656,7 @@ INSERT INTO `users` VALUES (
 	'Wen', 
 	'WenLoveZihan', 
 	'Wen He', 
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/048SpongeBob_海绵宝宝BQB/0.jpg', NULL, NULL);
+	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/0.jpg', NULL, NULL);
 INSERT INTO `users` VALUES (
 	0003,
 	'2019-09-17 17:27:29', 
@@ -708,31 +708,31 @@ CREATE TABLE `post_images`  (
 -- ----------------------------
 INSERT INTO `post_images` VALUES (
 	1001,
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/006Hamster_仓鼠🐹BQB/webwxgetmsgimg.png',
+	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
 INSERT INTO `post_images` VALUES (
 	1002,
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/048SpongeBob_海绵宝宝BQB/SpongeBob00002.jpg',
+	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
 INSERT INTO `post_images` VALUES (
 	1003,
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/048SpongeBob_海绵宝宝BQB/SpongeBob00003.jpg',
+	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
 INSERT INTO `post_images` VALUES (
 	1004,
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/048SpongeBob_海绵宝宝BQB/SpongeBob00004.jpg',
+	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
 INSERT INTO `post_images` VALUES (
 	1005,
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/064Trump_特朗普BQB/3.jpg',
+	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
 INSERT INTO `post_images` VALUES (
 	1006,
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/048SpongeBob_海绵宝宝BQB/SpongeBob00005.jpg',
+	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
 INSERT INTO `post_images` VALUES (
 	1007,
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/048SpongeBob_海绵宝宝BQB/SpongeBob00006.jpg',
+	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
 
 -- ----------------------------
