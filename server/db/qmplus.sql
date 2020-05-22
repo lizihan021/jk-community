@@ -404,11 +404,10 @@ INSERT INTO `sys_base_menus` VALUES (45, '2020-04-29 17:19:34', '2020-04-30 17:4
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_users`;
 CREATE TABLE `sys_users`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
-  `uuid` varbinary(255) NULL DEFAULT NULL,
+  `id` varchar(36) NOT NULL,
   `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'QMPlusUser',
   `header_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'http://www.henrongyi.top/avatar/lufu.jpg',
   `authority_id` double NULL DEFAULT 888,
@@ -420,15 +419,16 @@ CREATE TABLE `sys_users`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_users_deleted_at`(`deleted_at`) USING BTREE,
   INDEX `idx_sys_users_deleted_at`(`deleted_at`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_users
 -- ----------------------------
-INSERT INTO `sys_users` VALUES (1, '2019-09-13 17:23:46', '2020-05-06 16:09:15', NULL, 0x63653064363638352D633135662D343132362D613562342D383930626339643233353664, 
-  '超级管理员', 'http://qmplusimg.henrongyi.top/15887525450B978439-F04A-4a09-A8D3-DE7DE2677142.png', 888, NULL, 'admin', 'e10adc3949ba59abbe56e057f20f883e', NULL, lizihan021@gmail.com);
-INSERT INTO `sys_users` VALUES (2, '2019-09-13 17:27:29', '2019-09-13 17:27:29', NULL, 0x66643665663739622D393434632D343838382D383337372D616265326432363038383538, 
-  'QMPlusUser', 'http://qmplusimg.henrongyi.top/1572075907logo.png', 888, NULL, 'a303176530', '3ec063004a6f31642261936a379fde3d', NULL, NULL);
+INSERT INTO `sys_users`
+    (id, created_at, updated_at, nick_name, username, password, email)
+VALUES
+    ('6ccd780c-baba-1026-9564-5b8c656024db', '2019-09-13 17:23:46', '2020-05-06 16:09:15', '超级管理员', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'lizihan021@gmail.com'),
+    ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', '2019-09-13 17:27:29', '2019-09-13 17:27:29', 'QMPlusUser', 'a303176530', '3ec063004a6f31642261936a379fde3d', NULL);
 
 -- ----------------------------
 -- View structure for authority_menu
@@ -441,7 +441,7 @@ CREATE ALGORITHM = UNDEFINED DEFINER = `root`@`localhost` SQL SECURITY DEFINER V
 -- ----------------------------
 DROP TABLE IF EXISTS `post_images`;
 CREATE TABLE `post_images`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` varchar(36) NOT NULL,
   `link1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `link2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `link3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -452,114 +452,103 @@ CREATE TABLE `post_images`  (
   `link8` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `link9` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of post_images
 -- ----------------------------
-INSERT INTO `post_images` VALUES (
-	1001,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `post_images` VALUES (
-	1002,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `post_images` VALUES (
-	1003,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `post_images` VALUES (
-	1004,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `post_images` VALUES (
-	1005,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `post_images` VALUES (
-	1006,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `post_images` VALUES (
-	1007,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `post_images`
+    (id, link1)
+VALUES
+    ('9b81b1c8-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png'),
+    ('d0afecde-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg'),
+    ('e7f2dcb2-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg'),
+    ('e9534fce-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg'),
+    ('fa80a13e-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg'),
+    ('2d147e18-9c68-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg'),
+    ('2d710bce-9c68-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg');
 
 -- ----------------------------
 -- Table structure for post_items
 -- ----------------------------
 DROP TABLE IF EXISTS `post_items`;
 CREATE TABLE `post_items`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` varchar(36) NOT NULL,
   `price` int(10) UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of post_items
 -- ----------------------------
-INSERT INTO `post_items` VALUES (2001, 10500);
-INSERT INTO `post_items` VALUES (2002, 20500);
-INSERT INTO `post_items` VALUES (2003, 15000);
-INSERT INTO `post_items` VALUES (2004, 9500);
+INSERT INTO `post_items` VALUES ('9a5dcde4-9c68-11ea-b66a-3e16b23d18c0', 10500);
+INSERT INTO `post_items` VALUES ('ab8d199e-9c68-11ea-b66a-3e16b23d18c0', 20500);
+INSERT INTO `post_items` VALUES ('b1e26862-9c68-11ea-b66a-3e16b23d18c0', 15000);
+INSERT INTO `post_items` VALUES ('b8ff092a-9c68-11ea-b66a-3e16b23d18c0', 9500);
 
 -- ----------------------------
 -- Table structure for posts
 -- ----------------------------
 DROP TABLE IF EXISTS `posts`;
 CREATE TABLE `posts`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` varchar(36) NOT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `image_id` bigint(20) UNSIGNED,
-  `item_id` bigint(20) UNSIGNED,
-  `user_id` int(10) UNSIGNED NOT NULL,
+  `image_id` varchar(36),
+  `item_id` varchar(36),
+  `user_id` varchar(36) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   FOREIGN KEY (`image_id`) REFERENCES post_images(`id`),
   FOREIGN KEY (`item_id`) REFERENCES post_items(`id`),
   FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`)
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of posts
 -- ----------------------------
-INSERT INTO `posts` VALUES (3001, '2019-09-19 11:27:29', '2019-09-19 17:27:29', NULL, '啦啦啦啦啦啦', 1001, 2001, 1);
-INSERT INTO `posts` VALUES (3002, '2019-09-18 10:27:29', '2019-09-19 17:27:29', NULL, '陆垚知马莉', 1002, 2002, 2);
-INSERT INTO `posts` VALUES (3003, '2019-09-18 17:27:29', '2019-09-19 17:27:29', '2019-09-19 17:27:29', 'Nothing', NULL, NULL, 2);
-INSERT INTO `posts` VALUES (3004, '2019-09-18 17:27:29', '2019-09-18 17:27:29', NULL, 'Come down from your fences, open the gate', 1003, 2003, 1);
-INSERT INTO `posts` VALUES (3005, '2019-09-19 17:27:20', '2019-09-19 17:27:29', NULL, 'Emmm...', 1004, 2004, 2);
-INSERT INTO `posts` VALUES (3006, '2019-09-19 17:07:29', '2019-09-19 17:07:29', NULL, 'Hi there', 1005, NULL, 1);
-INSERT INTO `posts` VALUES (3007, '2019-09-15 17:24:29', '2019-09-29 17:27:29', NULL, 'Bonjour', 1006, NULL, 1);
-INSERT INTO `posts` VALUES (3008, '2019-09-12 12:24:29', '2019-12-12 17:27:29', NULL, '怎么了', 1007, NULL, 1);
-INSERT INTO `posts` VALUES (3009, '2019-01-15 17:24:29', '2019-02-19 19:27:29', NULL, 'gbd', NULL, NULL, 2);
-	
+INSERT INTO `posts` VALUES ('fbba252e-9c68-11ea-b66a-3e16b23d18c0', '2019-09-19 11:27:29', '2019-09-19 17:27:29', NULL, '啦啦啦啦啦啦', '9b81b1c8-9c67-11ea-b66a-3e16b23d18c0', '9a5dcde4-9c68-11ea-b66a-3e16b23d18c0', '6ccd780c-baba-1026-9564-5b8c656024db');
+INSERT INTO `posts` VALUES ('10b5fe6c-9c69-11ea-b66a-3e16b23d18c0', '2019-09-18 10:27:29', '2019-09-19 17:27:29', NULL, '陆垚知马莉', 'd0afecde-9c67-11ea-b66a-3e16b23d18c0', 'ab8d199e-9c68-11ea-b66a-3e16b23d18c0', '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
+INSERT INTO `posts` VALUES ('1d6a1a08-9c69-11ea-b66a-3e16b23d18c0', '2019-09-18 17:27:29', '2019-09-19 17:27:29', '2019-09-19 17:27:29', 'Nothing', NULL, NULL, '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
+INSERT INTO `posts` VALUES ('3f73f0c4-9c69-11ea-b66a-3e16b23d18c0', '2019-09-18 17:27:29', '2019-09-18 17:27:29', NULL, 'Come down from your fences, open the gate', 'e7f2dcb2-9c67-11ea-b66a-3e16b23d18c0', 'b1e26862-9c68-11ea-b66a-3e16b23d18c0', '6ccd780c-baba-1026-9564-5b8c656024db');
+INSERT INTO `posts` VALUES ('6befab2a-9c69-11ea-b66a-3e16b23d18c0', '2019-09-19 17:27:20', '2019-09-19 17:27:29', NULL, 'Emmm...', 'e9534fce-9c67-11ea-b66a-3e16b23d18c0', 'b8ff092a-9c68-11ea-b66a-3e16b23d18c0', '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
+INSERT INTO `posts` VALUES ('87df054c-9c69-11ea-b66a-3e16b23d18c0', '2019-09-19 17:07:29', '2019-09-19 17:07:29', NULL, 'Hi there', 'fa80a13e-9c67-11ea-b66a-3e16b23d18c0', NULL, '6ccd780c-baba-1026-9564-5b8c656024db');
+INSERT INTO `posts` VALUES ('91cdd010-9c69-11ea-b66a-3e16b23d18c0', '2019-09-15 17:24:29', '2019-09-29 17:27:29', NULL, 'Bonjour', '2d147e18-9c68-11ea-b66a-3e16b23d18c0', NULL, '6ccd780c-baba-1026-9564-5b8c656024db');
+INSERT INTO `posts` VALUES ('9b846998-9c69-11ea-b66a-3e16b23d18c0', '2019-09-12 12:24:29', '2019-12-12 17:27:29', NULL, '怎么了', '2d710bce-9c68-11ea-b66a-3e16b23d18c0', NULL, '6ccd780c-baba-1026-9564-5b8c656024db');
+INSERT INTO `posts` VALUES ('aa34b9e8-9c69-11ea-b66a-3e16b23d18c0', '2019-01-15 17:24:29', '2019-02-19 19:27:29', NULL, 'gbd', NULL, NULL, '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
+
 -- ----------------------------
 -- Table structure for comments
 -- ----------------------------
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` varchar(36) NOT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `post_id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL,
+  `post_id` varchar(36) NOT NULL,
+  `user_id` varchar(36) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
   FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`)
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of comments
 -- ----------------------------
-INSERT INTO `comments` VALUES (4001, '2020-01-15 17:24:29', '2020-01-15 17:24:29', NULL, 'Comment 1', 3001, 2);
-INSERT INTO `comments` VALUES (4002, '2020-01-16 17:24:29', '2020-01-16 17:24:29', NULL, 'Comment 2', 3001, 1);
-INSERT INTO `comments` VALUES (4003, '2020-01-15 17:24:29', '2020-02-19 19:27:29', NULL, 'Comment 3', 3002, 1);
+INSERT INTO `comments` VALUES ('02d3e4c0-9c6a-11ea-b66a-3e16b23d18c0', '2020-01-15 17:24:29', '2020-01-15 17:24:29', NULL, 'Comment 1', 'fbba252e-9c68-11ea-b66a-3e16b23d18c0', '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
+INSERT INTO `comments` VALUES ('10b9c80c-9c6a-11ea-b66a-3e16b23d18c0', '2020-01-16 17:24:29', '2020-01-16 17:24:29', NULL, 'Comment 2', 'fbba252e-9c68-11ea-b66a-3e16b23d18c0', '6ccd780c-baba-1026-9564-5b8c656024db');
+INSERT INTO `comments` VALUES ('257460cc-9c6a-11ea-b66a-3e16b23d18c0', '2020-01-15 17:24:29', '2020-02-19 19:27:29', NULL, 'Comment 3', '10b5fe6c-9c69-11ea-b66a-3e16b23d18c0', '6ccd780c-baba-1026-9564-5b8c656024db');
 
 -- ----------------------------
 -- Table structure for user_create_posts
 -- ----------------------------
 DROP TABLE IF EXISTS `user_create_posts`;
 CREATE TABLE `user_create_posts`  (
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `post_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(36) NOT NULL,
+  `post_id` varchar(36) NOT NULL,
   FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`),
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
@@ -567,23 +556,23 @@ CREATE TABLE `user_create_posts`  (
 -- ----------------------------
 -- Records of user_create_posts
 -- ----------------------------
-INSERT INTO `user_create_posts` VALUES (1, 3001);
-INSERT INTO `user_create_posts` VALUES (2, 3002);
-INSERT INTO `user_create_posts` VALUES (2, 3003);
-INSERT INTO `user_create_posts` VALUES (1, 3004);
-INSERT INTO `user_create_posts` VALUES (2, 3005);
-INSERT INTO `user_create_posts` VALUES (1, 3006);
-INSERT INTO `user_create_posts` VALUES (1, 3007);
-INSERT INTO `user_create_posts` VALUES (1, 3008);
-INSERT INTO `user_create_posts` VALUES (2, 3009);
+INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', 'fbba252e-9c68-11ea-b66a-3e16b23d18c0');
+INSERT INTO `user_create_posts` VALUES ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', '10b5fe6c-9c69-11ea-b66a-3e16b23d18c0');
+INSERT INTO `user_create_posts` VALUES ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', '1d6a1a08-9c69-11ea-b66a-3e16b23d18c0');
+INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', '3f73f0c4-9c69-11ea-b66a-3e16b23d18c0');
+INSERT INTO `user_create_posts` VALUES ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', '6befab2a-9c69-11ea-b66a-3e16b23d18c0');
+INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', '87df054c-9c69-11ea-b66a-3e16b23d18c0');
+INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', '91cdd010-9c69-11ea-b66a-3e16b23d18c0');
+INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', '9b846998-9c69-11ea-b66a-3e16b23d18c0');
+INSERT INTO `user_create_posts` VALUES ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', 'aa34b9e8-9c69-11ea-b66a-3e16b23d18c0');
 
 -- ----------------------------
 -- Table structure for post_comments
 -- ----------------------------
 DROP TABLE IF EXISTS `post_comments`;
 CREATE TABLE `post_comments`  (
-  `post_id` bigint(20) UNSIGNED NOT NULL,
-  `comment_id` bigint(20) UNSIGNED NOT NULL,
+  `post_id` varchar(36) NOT NULL,
+  `comment_id` varchar(36) NOT NULL,
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
   FOREIGN KEY (`comment_id`) REFERENCES comments(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
@@ -591,8 +580,8 @@ CREATE TABLE `post_comments`  (
 -- ----------------------------
 -- Records of post_comments
 -- ----------------------------
-INSERT INTO `post_comments` VALUES (3001, 4001);
-INSERT INTO `post_comments` VALUES (3001, 4002);
-INSERT INTO `post_comments` VALUES (3002, 4003);
+INSERT INTO `post_comments` VALUES ('fbba252e-9c68-11ea-b66a-3e16b23d18c0', '02d3e4c0-9c6a-11ea-b66a-3e16b23d18c0');
+INSERT INTO `post_comments` VALUES ('fbba252e-9c68-11ea-b66a-3e16b23d18c0', '10b9c80c-9c6a-11ea-b66a-3e16b23d18c0');
+INSERT INTO `post_comments` VALUES ('10b5fe6c-9c69-11ea-b66a-3e16b23d18c0', '257460cc-9c6a-11ea-b66a-3e16b23d18c0');
 
 SET FOREIGN_KEY_CHECKS = 1;
