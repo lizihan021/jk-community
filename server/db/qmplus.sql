@@ -632,7 +632,7 @@ CREATE TABLE `users`  (
   `header_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'http://www.henrongyi.top/avatar/lufu.jpg',
   `phone_data` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -709,31 +709,31 @@ CREATE TABLE `post_images`  (
 INSERT INTO `post_images` VALUES (
 	1001,
 	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
+	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
 	1002,
 	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
+	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
 	1003,
 	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
+	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
 	1004,
 	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
+	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
 	1005,
 	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
+	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
 	1006,
 	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
+	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
 	1007,
 	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg',
-	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,);
+	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for post_items
@@ -741,7 +741,7 @@ INSERT INTO `post_images` VALUES (
 DROP TABLE IF EXISTS `post_items`;
 CREATE TABLE `post_items`  (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `price` int(10) UNSIGNED NOT NULL DEFAULT NULL,
+  `price` int(10) UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
@@ -777,7 +777,7 @@ CREATE TABLE `posts`  (
   PRIMARY KEY (`id`) USING BTREE,
   FOREIGN KEY (`image_id`) REFERENCES post_images(`id`),
   FOREIGN KEY (`item_id`) REFERENCES post_items(`id`),
-  FOREIGN KEY (`user_id`) REFERENCES users(`id`),
+  FOREIGN KEY (`user_id`) REFERENCES users(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -878,7 +878,7 @@ CREATE TABLE `comments`  (
   `post_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
+  FOREIGN KEY (`post_id`) REFERENCES posts(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -917,7 +917,7 @@ CREATE TABLE `user_create_posts`  (
   `user_id` int(10) UNSIGNED NOT NULL,
   `post_id` bigint(20) UNSIGNED NOT NULL,
   FOREIGN KEY (`user_id`) REFERENCES users(`id`),
-  FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
+  FOREIGN KEY (`post_id`) REFERENCES posts(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -959,7 +959,7 @@ CREATE TABLE `post_comments`  (
   `post_id` bigint(20) UNSIGNED NOT NULL,
   `comment_id` bigint(20) UNSIGNED NOT NULL,
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
-  FOREIGN KEY (`comment_id`) REFERENCES comments(`id`),
+  FOREIGN KEY (`comment_id`) REFERENCES comments(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
