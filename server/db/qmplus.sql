@@ -431,49 +431,6 @@ INSERT INTO `sys_users` VALUES (2, '2019-09-13 17:27:29', '2019-09-13 17:27:29',
   'QMPlusUser', 'http://qmplusimg.henrongyi.top/1572075907logo.png', 888, NULL, 'a303176530', '3ec063004a6f31642261936a379fde3d', NULL, NULL);
 
 -- ----------------------------
--- Table structure for sys_workflow_step_infos
--- ----------------------------
-DROP TABLE IF EXISTS `sys_workflow_step_infos`;
-CREATE TABLE `sys_workflow_step_infos`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
-  `workflow_id` int(10) UNSIGNED NULL DEFAULT NULL,
-  `is_strat` tinyint(1) NULL DEFAULT NULL,
-  `step_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `step_no` double NULL DEFAULT NULL,
-  `step_authority_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `is_end` tinyint(1) NULL DEFAULT NULL,
-  `sys_workflow_id` int(10) UNSIGNED NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `idx_workflow_step_infos_deleted_at`(`deleted_at`) USING BTREE,
-  INDEX `idx_sys_workflow_step_infos_deleted_at`(`deleted_at`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Table structure for sys_workflows
--- ----------------------------
-DROP TABLE IF EXISTS `sys_workflows`;
-CREATE TABLE `sys_workflows`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
-  `workflow_nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `workflow_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `workflow_description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `idx_workflows_deleted_at`(`deleted_at`) USING BTREE,
-  INDEX `idx_sys_workflows_deleted_at`(`deleted_at`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of sys_workflows
--- ----------------------------
-INSERT INTO `sys_workflows` VALUES (8, '2019-12-09 15:20:21', '2019-12-09 15:20:21', NULL, '测试改版1', 'test', '123123');
-
--- ----------------------------
 -- View structure for authority_menu
 -- ----------------------------
 DROP VIEW IF EXISTS `authority_menu`;
@@ -501,32 +458,25 @@ CREATE TABLE `post_images`  (
 -- Records of post_images
 -- ----------------------------
 INSERT INTO `post_images` VALUES (
-	1001,
-	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png',
+	1001,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1002,
-	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg',
+	1002,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1003,
-	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg',
+	1003,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1004,
-	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg',
+	1004,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1005,
-	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg',
+	1005,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1006,
-	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg',
+	1006,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1007,
-	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg',
+	1007,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
@@ -542,18 +492,10 @@ CREATE TABLE `post_items`  (
 -- ----------------------------
 -- Records of post_items
 -- ----------------------------
-INSERT INTO `post_items` VALUES (
-	2001,
-	10500);
-INSERT INTO `post_items` VALUES (
-	2002,
-	20500);
-INSERT INTO `post_items` VALUES (
-	2003,
-	15000);
-INSERT INTO `post_items` VALUES (
-	2004,
-	9500);
+INSERT INTO `post_items` VALUES (2001, 10500);
+INSERT INTO `post_items` VALUES (2002, 20500);
+INSERT INTO `post_items` VALUES (2003, 15000);
+INSERT INTO `post_items` VALUES (2004, 9500);
 
 -- ----------------------------
 -- Table structure for posts
@@ -577,87 +519,15 @@ CREATE TABLE `posts`  (
 -- ----------------------------
 -- Records of posts
 -- ----------------------------
-INSERT INTO `posts` VALUES (
-	3001,
-	'2019-09-19 11:27:29',
-	'2019-09-19 17:27:29',
-	NULL,
-	'啦啦啦啦啦啦',
-	1001,
-	2001,
-	1);
-INSERT INTO `posts` VALUES (
-	3002,
-	'2019-09-18 10:27:29',
-	'2019-09-19 17:27:29',
-	NULL,
-	'陆垚知马莉',
-	1002,
-	2002,
-	2);
-INSERT INTO `posts` VALUES (
-	3003,
-	'2019-09-18 17:27:29',
-	'2019-09-19 17:27:29',
-	'2019-09-19 17:27:29',
-	'Nothing',
-	NULL,
-	NULL,
-	2);
-INSERT INTO `posts` VALUES (
-	3004,
-	'2019-09-18 17:27:29',
-	'2019-09-18 17:27:29',
-	NULL,
-	'Come down from your fences, open the gate',
-	1003,
-	2003,
-	1);
-INSERT INTO `posts` VALUES (
-	3005,
-	'2019-09-19 17:27:20',
-	'2019-09-19 17:27:29',
-	NULL,
-	'Emmm...',
-	1004,
-	2004,
-	2);
-INSERT INTO `posts` VALUES (
-	3006,
-	'2019-09-19 17:07:29',
-	'2019-09-19 17:07:29',
-	NULL,
-	'Hi there',
-	1005,
-	NULL,
-	1);
-INSERT INTO `posts` VALUES (
-	3007,
-	'2019-09-15 17:24:29',
-	'2019-09-29 17:27:29',
-	NULL,
-	'Bonjour',
-	1006,
-	NULL,
-	1);
-INSERT INTO `posts` VALUES (
-	3008,
-	'2019-09-12 12:24:29',
-	'2019-12-12 17:27:29',
-	NULL,
-	'怎么了',
-	1007,
-	NULL,
-	1);
-INSERT INTO `posts` VALUES (
-	3009,
-	'2019-01-15 17:24:29',
-	'2019-02-19 19:27:29',
-	NULL,
-	'gbd',
-	NULL,
-	NULL,
-	2);
+INSERT INTO `posts` VALUES (3001, '2019-09-19 11:27:29', '2019-09-19 17:27:29', NULL, '啦啦啦啦啦啦', 1001, 2001, 1);
+INSERT INTO `posts` VALUES (3002, '2019-09-18 10:27:29', '2019-09-19 17:27:29', NULL, '陆垚知马莉', 1002, 2002, 2);
+INSERT INTO `posts` VALUES (3003, '2019-09-18 17:27:29', '2019-09-19 17:27:29', '2019-09-19 17:27:29', 'Nothing', NULL, NULL, 2);
+INSERT INTO `posts` VALUES (3004, '2019-09-18 17:27:29', '2019-09-18 17:27:29', NULL, 'Come down from your fences, open the gate', 1003, 2003, 1);
+INSERT INTO `posts` VALUES (3005, '2019-09-19 17:27:20', '2019-09-19 17:27:29', NULL, 'Emmm...', 1004, 2004, 2);
+INSERT INTO `posts` VALUES (3006, '2019-09-19 17:07:29', '2019-09-19 17:07:29', NULL, 'Hi there', 1005, NULL, 1);
+INSERT INTO `posts` VALUES (3007, '2019-09-15 17:24:29', '2019-09-29 17:27:29', NULL, 'Bonjour', 1006, NULL, 1);
+INSERT INTO `posts` VALUES (3008, '2019-09-12 12:24:29', '2019-12-12 17:27:29', NULL, '怎么了', 1007, NULL, 1);
+INSERT INTO `posts` VALUES (3009, '2019-01-15 17:24:29', '2019-02-19 19:27:29', NULL, 'gbd', NULL, NULL, 2);
 	
 -- ----------------------------
 -- Table structure for comments
@@ -679,30 +549,9 @@ CREATE TABLE `comments`  (
 -- ----------------------------
 -- Records of comments
 -- ----------------------------
-INSERT INTO `comments` VALUES (
-	4001,
-	'2020-01-15 17:24:29',
-	'2020-01-15 17:24:29',
-	NULL,
-	'Comment 1',
-	3001,
-	2);
-INSERT INTO `comments` VALUES (
-	4002,
-	'2020-01-16 17:24:29',
-	'2020-01-16 17:24:29',
-	NULL,
-	'Comment 2',
-	3001,
-	1);
-INSERT INTO `comments` VALUES (
-	4003,
-	'2020-01-15 17:24:29',
-	'2020-02-19 19:27:29',
-	NULL,
-	'Comment 3',
-	3002,
-	1);
+INSERT INTO `comments` VALUES (4001, '2020-01-15 17:24:29', '2020-01-15 17:24:29', NULL, 'Comment 1', 3001, 2);
+INSERT INTO `comments` VALUES (4002, '2020-01-16 17:24:29', '2020-01-16 17:24:29', NULL, 'Comment 2', 3001, 1);
+INSERT INTO `comments` VALUES (4003, '2020-01-15 17:24:29', '2020-02-19 19:27:29', NULL, 'Comment 3', 3002, 1);
 
 -- ----------------------------
 -- Table structure for user_create_posts
@@ -718,33 +567,15 @@ CREATE TABLE `user_create_posts`  (
 -- ----------------------------
 -- Records of user_create_posts
 -- ----------------------------
-INSERT INTO `user_create_posts` VALUES (
-	1,
-	3001);
-INSERT INTO `user_create_posts` VALUES (
-	2,
-	3002);
-INSERT INTO `user_create_posts` VALUES (
-	2,
-	3003);
-INSERT INTO `user_create_posts` VALUES (
-	1,
-	3004);
-INSERT INTO `user_create_posts` VALUES (
-	2,
-	3005);
-INSERT INTO `user_create_posts` VALUES (
-	1,
-	3006);
-INSERT INTO `user_create_posts` VALUES (
-	1,
-	3007);
-INSERT INTO `user_create_posts` VALUES (
-	1,
-	3008);
-INSERT INTO `user_create_posts` VALUES (
-	2,
-	3009);
+INSERT INTO `user_create_posts` VALUES (1, 3001);
+INSERT INTO `user_create_posts` VALUES (2, 3002);
+INSERT INTO `user_create_posts` VALUES (2, 3003);
+INSERT INTO `user_create_posts` VALUES (1, 3004);
+INSERT INTO `user_create_posts` VALUES (2, 3005);
+INSERT INTO `user_create_posts` VALUES (1, 3006);
+INSERT INTO `user_create_posts` VALUES (1, 3007);
+INSERT INTO `user_create_posts` VALUES (1, 3008);
+INSERT INTO `user_create_posts` VALUES (2, 3009);
 
 -- ----------------------------
 -- Table structure for post_comments
@@ -760,14 +591,8 @@ CREATE TABLE `post_comments`  (
 -- ----------------------------
 -- Records of post_comments
 -- ----------------------------
-INSERT INTO `post_comments` VALUES (
-	3001,
-	4001);
-INSERT INTO `post_comments` VALUES (
-	3001,
-	4002);
-INSERT INTO `post_comments` VALUES (
-	3002,
-	4003);
+INSERT INTO `post_comments` VALUES (3001, 4001);
+INSERT INTO `post_comments` VALUES (3001, 4002);
+INSERT INTO `post_comments` VALUES (3002, 4003);
 
 SET FOREIGN_KEY_CHECKS = 1;
