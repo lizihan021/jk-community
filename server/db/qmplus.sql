@@ -34,85 +34,6 @@ CREATE TABLE `casbin_rule`  (
 -- ----------------------------
 -- Records of casbin_rule
 -- ----------------------------
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/base/login', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/base/register', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/api/createApi', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/api/getApiList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/api/getApiById', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/api/deleteApi', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/api/updateApi', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/api/getAllApis', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/authority/createAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/authority/deleteAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/authority/getAuthorityList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/authority/setDataAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/menu/getMenu', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/menu/getMenuList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/menu/addBaseMenu', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/menu/getBaseMenuTree', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/menu/addMenuAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/menu/getMenuAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/menu/deleteBaseMenu', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/menu/updateBaseMenu', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/menu/getBaseMenuById', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/user/changePassword', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/user/uploadHeaderImg', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/user/deleteUser', 'DELETE', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/user/getUserList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/user/setUserAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/fileUploadAndDownload/upload', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/fileUploadAndDownload/getFileList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/fileUploadAndDownload/deleteFile', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/casbin/updateCasbin', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/casbin/getPolicyPathByAuthorityId', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/jwt/jsonInBlacklist', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/system/getSystemConfig', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/system/setSystemConfig', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/customer/customer', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/customer/customer', 'PUT', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/customer/customer', 'DELETE', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/customer/customer', 'GET', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '8881', '/customer/customerList', 'GET', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/base/login', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/base/register', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/api/createApi', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/api/getApiList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/api/getApiById', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/api/deleteApi', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/api/updateApi', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/api/getAllApis', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/authority/createAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/authority/deleteAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/authority/getAuthorityList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/authority/setDataAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/menu/getMenu', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/menu/getMenuList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/menu/addBaseMenu', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/menu/getBaseMenuTree', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/menu/addMenuAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/menu/getMenuAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/menu/deleteBaseMenu', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/menu/updateBaseMenu', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/menu/getBaseMenuById', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/user/changePassword', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/user/uploadHeaderImg', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/user/deleteUser', 'DELETE', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/user/getUserList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/user/setUserAuthority', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/fileUploadAndDownload/upload', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/fileUploadAndDownload/getFileList', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/fileUploadAndDownload/deleteFile', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/casbin/updateCasbin', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/casbin/getPolicyPathByAuthorityId', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/jwt/jsonInBlacklist', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/system/getSystemConfig', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/system/setSystemConfig', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/customer/customer', 'POST', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/customer/customer', 'PUT', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/customer/customer', 'DELETE', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/customer/customer', 'GET', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/customer/customerList', 'GET', '', '', '');
-INSERT INTO `casbin_rule` VALUES ('p', '9528', '/autoCode/createTemp', 'POST', '', '', '');
 INSERT INTO `casbin_rule` VALUES ('p', '888', '/base/login', 'POST', '', '', '');
 INSERT INTO `casbin_rule` VALUES ('p', '888', '/base/register', 'POST', '', '', '');
 INSERT INTO `casbin_rule` VALUES ('p', '888', '/api/createApi', 'POST', '', '', '');
@@ -390,8 +311,6 @@ CREATE TABLE `sys_authorities`  (
 -- Records of sys_authorities
 -- ----------------------------
 INSERT INTO `sys_authorities` VALUES ('888', '普通用户', '0', '2020-04-04 11:44:56', '2020-04-24 10:16:42', NULL);
-INSERT INTO `sys_authorities` VALUES ('8881', '普通用户子角色', '888', '2020-04-04 11:44:56', '2020-04-24 10:16:42', NULL);
-INSERT INTO `sys_authorities` VALUES ('9528', '测试角色', '0', '2020-04-04 11:44:56', '2020-04-24 10:16:42', NULL);
 
 -- ----------------------------
 -- Table structure for sys_authority_menus
@@ -428,33 +347,6 @@ INSERT INTO `sys_authority_menus` VALUES ('888', 40);
 INSERT INTO `sys_authority_menus` VALUES ('888', 41);
 INSERT INTO `sys_authority_menus` VALUES ('888', 42);
 INSERT INTO `sys_authority_menus` VALUES ('888', 45);
-INSERT INTO `sys_authority_menus` VALUES ('8881', 1);
-INSERT INTO `sys_authority_menus` VALUES ('8881', 2);
-INSERT INTO `sys_authority_menus` VALUES ('8881', 18);
-INSERT INTO `sys_authority_menus` VALUES ('8881', 38);
-INSERT INTO `sys_authority_menus` VALUES ('8881', 40);
-INSERT INTO `sys_authority_menus` VALUES ('8881', 41);
-INSERT INTO `sys_authority_menus` VALUES ('8881', 42);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 1);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 2);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 3);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 4);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 5);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 6);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 17);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 18);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 19);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 20);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 21);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 22);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 23);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 26);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 33);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 34);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 38);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 40);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 41);
-INSERT INTO `sys_authority_menus` VALUES ('9528', 42);
 
 -- ----------------------------
 -- Table structure for sys_base_menus
@@ -508,33 +400,6 @@ INSERT INTO `sys_base_menus` VALUES (42, '2020-04-02 14:19:36', '2020-04-24 10:1
 INSERT INTO `sys_base_menus` VALUES (45, '2020-04-29 17:19:34', '2020-04-30 17:44:44', NULL, 0, 0, 'iconList', 'iconList', 0, 'view/iconList/index.vue', '图标集合', 'star-on', NULL, 2, 0, 0);
 
 -- ----------------------------
--- Table structure for sys_data_authority_id
--- ----------------------------
-DROP TABLE IF EXISTS `sys_data_authority_id`;
-CREATE TABLE `sys_data_authority_id`  (
-  `sys_authority_authority_id` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `data_authority_id` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  PRIMARY KEY (`sys_authority_authority_id`, `data_authority_id`) USING BTREE,
-  INDEX `sys_authority_authority_id`(`sys_authority_authority_id`) USING BTREE,
-  INDEX `data_authority_id`(`data_authority_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of sys_data_authority_id
--- ----------------------------
-INSERT INTO `sys_data_authority_id` VALUES ('888', '888');
-INSERT INTO `sys_data_authority_id` VALUES ('888', '8881');
-INSERT INTO `sys_data_authority_id` VALUES ('888', '9528');
-INSERT INTO `sys_data_authority_id` VALUES ('888222', '888');
-INSERT INTO `sys_data_authority_id` VALUES ('888222', '8881');
-INSERT INTO `sys_data_authority_id` VALUES ('888222', '9528');
-INSERT INTO `sys_data_authority_id` VALUES ('8883', '888');
-INSERT INTO `sys_data_authority_id` VALUES ('8883', '8881');
-INSERT INTO `sys_data_authority_id` VALUES ('8883', '9528');
-INSERT INTO `sys_data_authority_id` VALUES ('9528', '8881');
-INSERT INTO `sys_data_authority_id` VALUES ('9528', '9528');
-
--- ----------------------------
 -- Table structure for sys_users
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_users`;
@@ -544,8 +409,6 @@ CREATE TABLE `sys_users`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   `uuid` varbinary(255) NULL DEFAULT NULL,
-  `user_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `pass_word` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'QMPlusUser',
   `header_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'http://www.henrongyi.top/avatar/lufu.jpg',
   `authority_id` double NULL DEFAULT 888,
@@ -557,13 +420,15 @@ CREATE TABLE `sys_users`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idx_users_deleted_at`(`deleted_at`) USING BTREE,
   INDEX `idx_sys_users_deleted_at`(`deleted_at`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_users
 -- ----------------------------
-INSERT INTO `sys_users` VALUES (10, '2019-09-13 17:23:46', '2020-05-06 16:09:15', NULL, 0x63653064363638352D633135662D343132362D613562342D383930626339643233353664, NULL, NULL, '超级管理员', 'http://qmplusimg.henrongyi.top/15887525450B978439-F04A-4a09-A8D3-DE7DE2677142.png', 888, NULL, 'admin', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL);
-INSERT INTO `sys_users` VALUES (11, '2019-09-13 17:27:29', '2019-09-13 17:27:29', NULL, 0x66643665663739622D393434632D343838382D383337372D616265326432363038383538, NULL, NULL, 'QMPlusUser', 'http://qmplusimg.henrongyi.top/1572075907logo.png', 9528, NULL, 'a303176530', '3ec063004a6f31642261936a379fde3d', NULL, NULL);
+INSERT INTO `sys_users` VALUES (1, '2019-09-13 17:23:46', '2020-05-06 16:09:15', NULL, 0x63653064363638352D633135662D343132362D613562342D383930626339643233353664, 
+  '超级管理员', 'http://qmplusimg.henrongyi.top/15887525450B978439-F04A-4a09-A8D3-DE7DE2677142.png', 888, NULL, 'admin', 'e10adc3949ba59abbe56e057f20f883e', NULL, NULL);
+INSERT INTO `sys_users` VALUES (2, '2019-09-13 17:27:29', '2019-09-13 17:27:29', NULL, 0x66643665663739622D393434632D343838382D383337372D616265326432363038383538, 
+  'QMPlusUser', 'http://qmplusimg.henrongyi.top/1572075907logo.png', 888, NULL, 'a303176530', '3ec063004a6f31642261936a379fde3d', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for sys_workflow_step_infos
@@ -613,77 +478,6 @@ INSERT INTO `sys_workflows` VALUES (8, '2019-12-09 15:20:21', '2019-12-09 15:20:
 -- ----------------------------
 DROP VIEW IF EXISTS `authority_menu`;
 CREATE ALGORITHM = UNDEFINED DEFINER = `root`@`localhost` SQL SECURITY DEFINER VIEW `authority_menu` AS select `sys_base_menus`.`id` AS `id`,`sys_base_menus`.`created_at` AS `created_at`,`sys_base_menus`.`updated_at` AS `updated_at`,`sys_base_menus`.`deleted_at` AS `deleted_at`,`sys_base_menus`.`menu_level` AS `menu_level`,`sys_base_menus`.`parent_id` AS `parent_id`,`sys_base_menus`.`path` AS `path`,`sys_base_menus`.`name` AS `name`,`sys_base_menus`.`hidden` AS `hidden`,`sys_base_menus`.`component` AS `component`,`sys_base_menus`.`title` AS `title`,`sys_base_menus`.`icon` AS `icon`,`sys_base_menus`.`nick_name` AS `nick_name`,`sys_base_menus`.`sort` AS `sort`,`sys_authority_menus`.`sys_authority_authority_id` AS `authority_id`,`sys_authority_menus`.`sys_base_menu_id` AS `menu_id`,`sys_base_menus`.`keep_alive` AS `keep_alive`,`sys_base_menus`.`default_menu` AS `default_menu` from (`sys_authority_menus` join `sys_base_menus` on((`sys_authority_menus`.`sys_base_menu_id` = `sys_base_menus`.`id`)));
-
-SET FOREIGN_KEY_CHECKS = 1;
-
-
--- ----------------------------
--- Table structure for users
--- ----------------------------
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'QMPlusUser',
-  `header_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'http://www.henrongyi.top/avatar/lufu.jpg',
-  `phone_data` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of users
--- ----------------------------
-
-INSERT INTO `users` VALUES (
-	0001,
-	'2019-09-13 17:23:46', 
-	'2020-05-06 16:09:15', 
-	NULL, 
-	'Zihan', 
-	'ZihanLoveWen', 
-	'Zihan Li', 
-	'https://github.com/zhaoolee/ChineseBQB/blob/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00001.jpg?raw=true', NULL, NULL);
-INSERT INTO `users` VALUES (
-	0002, 
-	'2019-09-13 17:27:29', 
-	'2019-09-13 17:27:29', 
-	NULL, 
-	'Wen', 
-	'WenLoveZihan', 
-	'Wen He', 
-	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/0.jpg', NULL, NULL);
-INSERT INTO `users` VALUES (
-	0003,
-	'2019-09-17 17:27:29', 
-	'2019-09-17 17:27:29', 
-	NULL, 
-	'skywalker', 
-	'iamyourfather', 
-	'Luke Skywalker',
-	'http://qmplusimg.henrongyi.top/1572075907logo.png', NULL, NULL);
-INSERT INTO `users` VALUES (
-	0004,
-	'2019-09-18 17:27:29', 
-	'2019-09-18 17:27:29', 
-	'2020-05-06 16:09:15', 
-	'captain', 
-	'iamyourfathertoo', 
-	'Jack Sparrow',
-	'http://qmplusimg.henrongyi.top/1572075907logo.png', NULL, NULL);
-INSERT INTO `users` VALUES (
-	0005,
-	'2019-09-19 17:27:29', 
-	'2019-09-19 17:27:29', 
-	NULL, 
-	'paul', 
-	'heyjude', 
-	'Paul McCartney',
-	'http://qmplusimg.henrongyi.top/1572075907logo.png', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for post_images
@@ -777,7 +571,7 @@ CREATE TABLE `posts`  (
   PRIMARY KEY (`id`) USING BTREE,
   FOREIGN KEY (`image_id`) REFERENCES post_images(`id`),
   FOREIGN KEY (`item_id`) REFERENCES post_items(`id`),
-  FOREIGN KEY (`user_id`) REFERENCES users(`id`)
+  FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -791,7 +585,7 @@ INSERT INTO `posts` VALUES (
 	'啦啦啦啦啦啦',
 	1001,
 	2001,
-	0001);
+	1);
 INSERT INTO `posts` VALUES (
 	3002,
 	'2019-09-18 10:27:29',
@@ -800,7 +594,7 @@ INSERT INTO `posts` VALUES (
 	'陆垚知马莉',
 	1002,
 	2002,
-	0002);
+	2);
 INSERT INTO `posts` VALUES (
 	3003,
 	'2019-09-18 17:27:29',
@@ -809,7 +603,7 @@ INSERT INTO `posts` VALUES (
 	'Nothing',
 	NULL,
 	NULL,
-	0002);
+	2);
 INSERT INTO `posts` VALUES (
 	3004,
 	'2019-09-18 17:27:29',
@@ -818,7 +612,7 @@ INSERT INTO `posts` VALUES (
 	'Come down from your fences, open the gate',
 	1003,
 	2003,
-	0003);
+	1);
 INSERT INTO `posts` VALUES (
 	3005,
 	'2019-09-19 17:27:20',
@@ -827,7 +621,7 @@ INSERT INTO `posts` VALUES (
 	'Emmm...',
 	1004,
 	2004,
-	0004);
+	2);
 INSERT INTO `posts` VALUES (
 	3006,
 	'2019-09-19 17:07:29',
@@ -836,7 +630,7 @@ INSERT INTO `posts` VALUES (
 	'Hi there',
 	1005,
 	NULL,
-	0005);
+	1);
 INSERT INTO `posts` VALUES (
 	3007,
 	'2019-09-15 17:24:29',
@@ -845,7 +639,7 @@ INSERT INTO `posts` VALUES (
 	'Bonjour',
 	1006,
 	NULL,
-	0001);
+	1);
 INSERT INTO `posts` VALUES (
 	3008,
 	'2019-09-12 12:24:29',
@@ -854,7 +648,7 @@ INSERT INTO `posts` VALUES (
 	'怎么了',
 	1007,
 	NULL,
-	0005);
+	1);
 INSERT INTO `posts` VALUES (
 	3009,
 	'2019-01-15 17:24:29',
@@ -863,7 +657,7 @@ INSERT INTO `posts` VALUES (
 	'gbd',
 	NULL,
 	NULL,
-	0002);
+	2);
 	
 -- ----------------------------
 -- Table structure for comments
@@ -878,7 +672,8 @@ CREATE TABLE `comments`  (
   `post_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  FOREIGN KEY (`post_id`) REFERENCES posts(`id`)
+  FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
+  FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -891,7 +686,7 @@ INSERT INTO `comments` VALUES (
 	NULL,
 	'Comment 1',
 	3001,
-	0002);
+	2);
 INSERT INTO `comments` VALUES (
 	4002,
 	'2020-01-16 17:24:29',
@@ -899,7 +694,7 @@ INSERT INTO `comments` VALUES (
 	NULL,
 	'Comment 2',
 	3001,
-	0003);
+	1);
 INSERT INTO `comments` VALUES (
 	4003,
 	'2020-01-15 17:24:29',
@@ -907,7 +702,7 @@ INSERT INTO `comments` VALUES (
 	NULL,
 	'Comment 3',
 	3002,
-	0001);
+	1);
 
 -- ----------------------------
 -- Table structure for user_create_posts
@@ -916,7 +711,7 @@ DROP TABLE IF EXISTS `user_create_posts`;
 CREATE TABLE `user_create_posts`  (
   `user_id` int(10) UNSIGNED NOT NULL,
   `post_id` bigint(20) UNSIGNED NOT NULL,
-  FOREIGN KEY (`user_id`) REFERENCES users(`id`),
+  FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`),
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
@@ -924,31 +719,31 @@ CREATE TABLE `user_create_posts`  (
 -- Records of user_create_posts
 -- ----------------------------
 INSERT INTO `user_create_posts` VALUES (
-	0001,
+	1,
 	3001);
 INSERT INTO `user_create_posts` VALUES (
-	0002,
+	2,
 	3002);
 INSERT INTO `user_create_posts` VALUES (
-	0002,
+	2,
 	3003);
 INSERT INTO `user_create_posts` VALUES (
-	0003,
+	1,
 	3004);
 INSERT INTO `user_create_posts` VALUES (
-	0004,
+	2,
 	3005);
 INSERT INTO `user_create_posts` VALUES (
-	0005,
+	1,
 	3006);
 INSERT INTO `user_create_posts` VALUES (
-	0001,
+	1,
 	3007);
 INSERT INTO `user_create_posts` VALUES (
-	0005,
+	1,
 	3008);
 INSERT INTO `user_create_posts` VALUES (
-	0002,
+	2,
 	3009);
 
 -- ----------------------------
@@ -974,3 +769,5 @@ INSERT INTO `post_comments` VALUES (
 INSERT INTO `post_comments` VALUES (
 	3002,
 	4003);
+
+SET FOREIGN_KEY_CHECKS = 1;
