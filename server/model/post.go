@@ -2,16 +2,14 @@ package model
 
 import (
 	"github.com/jinzhu/gorm"
-	uuid "github.com/satori/go.uuid"
 )
 
 type Post struct {
 	gorm.Model
-	UUID    uuid.UUID `json:"uuid"`
-	Content string    `json:"content"`
-	ImageID string    `json:"imageID"`
-	ItemID  string    `json:"itemID"`
-	UserID  string    `json:"userId"`
+	Content string `json:"content"`
+	ImageID uint   `json:"imageID"`
+	ItemID  uint   `json:"itemID"`
+	UserID  uint   `json:"userId"`
 }
 
 type PostImages struct {
