@@ -21,7 +21,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-*package-lock.json
+web/package-lock.json
 
 go.sum
 /server/log/
