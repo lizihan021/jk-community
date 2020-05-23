@@ -441,7 +441,7 @@ CREATE ALGORITHM = UNDEFINED DEFINER = `root`@`localhost` SQL SECURITY DEFINER V
 -- ----------------------------
 DROP TABLE IF EXISTS `post_images`;
 CREATE TABLE `post_images`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `link1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `link2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `link3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -458,25 +458,25 @@ CREATE TABLE `post_images`  (
 -- Records of post_images
 -- ----------------------------
 INSERT INTO `post_images` VALUES (
-	1001,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png',
+	1001, 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1002,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg',
+	1002, 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1003,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg',
+	1003, 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1004,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg',
+	1004, 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1005,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg',
+	1005, 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1006,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg',
+	1006, 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `post_images` VALUES (
-	1007,	'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg',
+	1007, 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg',
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
@@ -484,7 +484,7 @@ INSERT INTO `post_images` VALUES (
 -- ----------------------------
 DROP TABLE IF EXISTS `post_items`;
 CREATE TABLE `post_items`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `price` int(10) UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
@@ -502,13 +502,13 @@ INSERT INTO `post_items` VALUES (2004, 9500);
 -- ----------------------------
 DROP TABLE IF EXISTS `posts`;
 CREATE TABLE `posts`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `image_id` bigint(20) UNSIGNED,
-  `item_id` bigint(20) UNSIGNED,
+  `image_id` int(10) UNSIGNED,
+  `item_id` int(10) UNSIGNED,
   `user_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   FOREIGN KEY (`image_id`) REFERENCES post_images(`id`),
@@ -534,12 +534,12 @@ INSERT INTO `posts` VALUES (3009, '2019-01-15 17:24:29', '2019-02-19 19:27:29', 
 -- ----------------------------
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `post_id` bigint(20) UNSIGNED NOT NULL,
+  `post_id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
@@ -559,7 +559,7 @@ INSERT INTO `comments` VALUES (4003, '2020-01-15 17:24:29', '2020-02-19 19:27:29
 DROP TABLE IF EXISTS `user_create_posts`;
 CREATE TABLE `user_create_posts`  (
   `user_id` int(10) UNSIGNED NOT NULL,
-  `post_id` bigint(20) UNSIGNED NOT NULL,
+  `post_id` int(10) UNSIGNED NOT NULL,
   FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`),
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
@@ -582,8 +582,8 @@ INSERT INTO `user_create_posts` VALUES (2, 3009);
 -- ----------------------------
 DROP TABLE IF EXISTS `post_comments`;
 CREATE TABLE `post_comments`  (
-  `post_id` bigint(20) UNSIGNED NOT NULL,
-  `comment_id` bigint(20) UNSIGNED NOT NULL,
+  `post_id` int(10) UNSIGNED NOT NULL,
+  `comment_id` int(10) UNSIGNED NOT NULL,
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
   FOREIGN KEY (`comment_id`) REFERENCES comments(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
