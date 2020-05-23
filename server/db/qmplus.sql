@@ -467,7 +467,7 @@ VALUES
     ('fa80a13e-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg'),
     ('2d147e18-9c68-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg'),
     ('2d710bce-9c68-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg');
-
+    
 -- ----------------------------
 -- Table structure for post_items
 -- ----------------------------
