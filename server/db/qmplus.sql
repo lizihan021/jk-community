@@ -404,31 +404,32 @@ INSERT INTO `sys_base_menus` VALUES (45, '2020-04-29 17:19:34', '2020-04-30 17:4
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_users`;
 CREATE TABLE `sys_users`  (
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
-  `id` varchar(36) NOT NULL,
-  `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'QMPlusUser',
-  `header_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'http://www.henrongyi.top/avatar/lufu.jpg',
-  `authority_id` double NULL DEFAULT 888,
-  `authority_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `phone_data` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `idx_users_deleted_at`(`deleted_at`) USING BTREE,
-  INDEX `idx_sys_users_deleted_at`(`deleted_at`) USING BTREE
+    `id` BINARY(16) NOT NULL,
+    `uuid` varchar(36) generated always as (BIN_TO_UUID(id)),
+    `created_at` timestamp(0) NULL DEFAULT NULL,
+    `updated_at` timestamp(0) NULL DEFAULT NULL,
+    `deleted_at` timestamp(0) NULL DEFAULT NULL,
+    `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'QMPlusUser',
+    `header_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 'http://www.henrongyi.top/avatar/lufu.jpg',
+    `authority_id` double NULL DEFAULT 888,
+    `authority_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `phone_data` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    PRIMARY KEY (`id`) USING BTREE,
+    INDEX `idx_users_deleted_at`(`deleted_at`) USING BTREE,
+    INDEX `idx_sys_users_deleted_at`(`deleted_at`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_users
 -- ----------------------------
 INSERT INTO `sys_users`
-    (id, created_at, updated_at, nick_name, username, password, email)
+(id, created_at, updated_at, nick_name, username, password, email)
 VALUES
-    ('6ccd780c-baba-1026-9564-5b8c656024db', '2019-09-13 17:23:46', '2020-05-06 16:09:15', '超级管理员', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'lizihan021@gmail.com'),
-    ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', '2019-09-13 17:27:29', '2019-09-13 17:27:29', 'QMPlusUser', 'a303176530', '3ec063004a6f31642261936a379fde3d', NULL);
+(UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db'), '2019-09-13 17:23:46', '2020-05-06 16:09:15', '超级管理员', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'lizihan021@gmail.com'),
+(UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0'), '2019-09-13 17:27:29', '2019-09-13 17:27:29', 'QMPlusUser', 'a303176530', '3ec063004a6f31642261936a379fde3d', NULL);
 
 -- ----------------------------
 -- View structure for authority_menu
@@ -441,17 +442,18 @@ CREATE ALGORITHM = UNDEFINED DEFINER = `root`@`localhost` SQL SECURITY DEFINER V
 -- ----------------------------
 DROP TABLE IF EXISTS `post_images`;
 CREATE TABLE `post_images`  (
-  `id` varchar(36) NOT NULL,
-  `link1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `link2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `link3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `link4` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `link5` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `link6` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `link7` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `link8` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `link9` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+    `id` BINARY(16) NOT NULL,
+    `uuid` varchar(36) generated always as (BIN_TO_UUID(id)),
+    `link1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `link2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `link3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `link4` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `link5` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `link6` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `link7` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `link8` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `link9` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -460,95 +462,107 @@ CREATE TABLE `post_images`  (
 INSERT INTO `post_images`
     (id, link1)
 VALUES
-    ('9b81b1c8-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png'),
-    ('d0afecde-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg'),
-    ('e7f2dcb2-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg'),
-    ('e9534fce-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg'),
-    ('fa80a13e-9c67-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg'),
-    ('2d147e18-9c68-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg'),
-    ('2d710bce-9c68-11ea-b66a-3e16b23d18c0', 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg');
+    (UUID_TO_BIN('9b81b1c8-9c67-11ea-b66a-3e16b23d18c0'), 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/006Hamster_%E4%BB%93%E9%BC%A0%F0%9F%90%B9BQB/webwxgetmsgimg.png'),
+    (UUID_TO_BIN('d0afecde-9c67-11ea-b66a-3e16b23d18c0'), 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00002.jpg'),
+    (UUID_TO_BIN('e7f2dcb2-9c67-11ea-b66a-3e16b23d18c0'), 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00003.jpg'),
+    (UUID_TO_BIN('e9534fce-9c67-11ea-b66a-3e16b23d18c0'), 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00004.jpg'),
+    (UUID_TO_BIN('fa80a13e-9c67-11ea-b66a-3e16b23d18c0'), 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00005.jpg'),
+    (UUID_TO_BIN('2d147e18-9c68-11ea-b66a-3e16b23d18c0'), 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/048SpongeBob_%E6%B5%B7%E7%BB%B5%E5%AE%9D%E5%AE%9DBQB/SpongeBob00006.jpg'),
+    (UUID_TO_BIN('2d710bce-9c68-11ea-b66a-3e16b23d18c0'), 'https://raw.githubusercontent.com/zhaoolee/ChineseBQB/master/064Trump_%E7%89%B9%E6%9C%97%E6%99%AEBQB/3.jpg');
     
 -- ----------------------------
 -- Table structure for post_items
 -- ----------------------------
 DROP TABLE IF EXISTS `post_items`;
 CREATE TABLE `post_items`  (
-  `id` varchar(36) NOT NULL,
-  `price` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`) USING BTREE
+    `id` BINARY(16) NOT NULL,
+    `uuid` varchar(36) generated always as (BIN_TO_UUID(id)),
+    `price` int(10) UNSIGNED NOT NULL DEFAULT 0,
+    PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of post_items
 -- ----------------------------
-INSERT INTO `post_items` VALUES ('9a5dcde4-9c68-11ea-b66a-3e16b23d18c0', 10500);
-INSERT INTO `post_items` VALUES ('ab8d199e-9c68-11ea-b66a-3e16b23d18c0', 20500);
-INSERT INTO `post_items` VALUES ('b1e26862-9c68-11ea-b66a-3e16b23d18c0', 15000);
-INSERT INTO `post_items` VALUES ('b8ff092a-9c68-11ea-b66a-3e16b23d18c0', 9500);
+INSERT INTO `post_items`
+    (id, price)
+VALUES
+    (UUID_TO_BIN('9a5dcde4-9c68-11ea-b66a-3e16b23d18c0'), 10500),
+    (UUID_TO_BIN('ab8d199e-9c68-11ea-b66a-3e16b23d18c0'), 20500),
+    (UUID_TO_BIN('b1e26862-9c68-11ea-b66a-3e16b23d18c0'), 15000),
+    (UUID_TO_BIN('b8ff092a-9c68-11ea-b66a-3e16b23d18c0'), 9500);
 
 -- ----------------------------
 -- Table structure for posts
 -- ----------------------------
 DROP TABLE IF EXISTS `posts`;
 CREATE TABLE `posts`  (
-  `id` varchar(36) NOT NULL,
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
-  `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `image_id` varchar(36),
-  `item_id` varchar(36),
-  `user_id` varchar(36) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  FOREIGN KEY (`image_id`) REFERENCES post_images(`id`),
-  FOREIGN KEY (`item_id`) REFERENCES post_items(`id`),
-  FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`)
+    `id` BINARY(16) NOT NULL,
+    `uuid` varchar(36) generated always as (BIN_TO_UUID(id)),
+    `created_at` timestamp(0) NULL DEFAULT NULL,
+    `updated_at` timestamp(0) NULL DEFAULT NULL,
+    `deleted_at` timestamp(0) NULL DEFAULT NULL,
+    `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `image_id` BINARY(16),
+    `item_id` BINARY(16),
+    `user_id` BINARY(16) NOT NULL,
+    PRIMARY KEY (`id`) USING BTREE,
+    FOREIGN KEY (`image_id`) REFERENCES post_images(`id`),
+    FOREIGN KEY (`item_id`) REFERENCES post_items(`id`),
+    FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of posts
 -- ----------------------------
-INSERT INTO `posts` VALUES ('fbba252e-9c68-11ea-b66a-3e16b23d18c0', '2019-09-19 11:27:29', '2019-09-19 17:27:29', NULL, '啦啦啦啦啦啦', '9b81b1c8-9c67-11ea-b66a-3e16b23d18c0', '9a5dcde4-9c68-11ea-b66a-3e16b23d18c0', '6ccd780c-baba-1026-9564-5b8c656024db');
-INSERT INTO `posts` VALUES ('10b5fe6c-9c69-11ea-b66a-3e16b23d18c0', '2019-09-18 10:27:29', '2019-09-19 17:27:29', NULL, '陆垚知马莉', 'd0afecde-9c67-11ea-b66a-3e16b23d18c0', 'ab8d199e-9c68-11ea-b66a-3e16b23d18c0', '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
-INSERT INTO `posts` VALUES ('1d6a1a08-9c69-11ea-b66a-3e16b23d18c0', '2019-09-18 17:27:29', '2019-09-19 17:27:29', '2019-09-19 17:27:29', 'Nothing', NULL, NULL, '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
-INSERT INTO `posts` VALUES ('3f73f0c4-9c69-11ea-b66a-3e16b23d18c0', '2019-09-18 17:27:29', '2019-09-18 17:27:29', NULL, 'Come down from your fences, open the gate', 'e7f2dcb2-9c67-11ea-b66a-3e16b23d18c0', 'b1e26862-9c68-11ea-b66a-3e16b23d18c0', '6ccd780c-baba-1026-9564-5b8c656024db');
-INSERT INTO `posts` VALUES ('6befab2a-9c69-11ea-b66a-3e16b23d18c0', '2019-09-19 17:27:20', '2019-09-19 17:27:29', NULL, 'Emmm...', 'e9534fce-9c67-11ea-b66a-3e16b23d18c0', 'b8ff092a-9c68-11ea-b66a-3e16b23d18c0', '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
-INSERT INTO `posts` VALUES ('87df054c-9c69-11ea-b66a-3e16b23d18c0', '2019-09-19 17:07:29', '2019-09-19 17:07:29', NULL, 'Hi there', 'fa80a13e-9c67-11ea-b66a-3e16b23d18c0', NULL, '6ccd780c-baba-1026-9564-5b8c656024db');
-INSERT INTO `posts` VALUES ('91cdd010-9c69-11ea-b66a-3e16b23d18c0', '2019-09-15 17:24:29', '2019-09-29 17:27:29', NULL, 'Bonjour', '2d147e18-9c68-11ea-b66a-3e16b23d18c0', NULL, '6ccd780c-baba-1026-9564-5b8c656024db');
-INSERT INTO `posts` VALUES ('9b846998-9c69-11ea-b66a-3e16b23d18c0', '2019-09-12 12:24:29', '2019-12-12 17:27:29', NULL, '怎么了', '2d710bce-9c68-11ea-b66a-3e16b23d18c0', NULL, '6ccd780c-baba-1026-9564-5b8c656024db');
-INSERT INTO `posts` VALUES ('aa34b9e8-9c69-11ea-b66a-3e16b23d18c0', '2019-01-15 17:24:29', '2019-02-19 19:27:29', NULL, 'gbd', NULL, NULL, '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
+INSERT INTO `posts`
+    (id, created_at, updated_at, deleted_at, content, image_id, item_id, user_id)
+VALUES
+    (UUID_TO_BIN('fbba252e-9c68-11ea-b66a-3e16b23d18c0'), '2019-09-19 11:27:29', '2019-09-19 17:27:29', NULL, '啦啦啦啦啦啦', UUID_TO_BIN('9b81b1c8-9c67-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('9a5dcde4-9c68-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db')),
+    (UUID_TO_BIN('10b5fe6c-9c69-11ea-b66a-3e16b23d18c0'), '2019-09-18 10:27:29', '2019-09-19 17:27:29', NULL, '陆垚知马莉', UUID_TO_BIN('d0afecde-9c67-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('ab8d199e-9c68-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0')),
+    (UUID_TO_BIN('1d6a1a08-9c69-11ea-b66a-3e16b23d18c0'), '2019-09-18 17:27:29', '2019-09-19 17:27:29', '2019-09-19 17:27:29', 'Nothing', NULL, NULL, UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0')),
+    (UUID_TO_BIN('3f73f0c4-9c69-11ea-b66a-3e16b23d18c0'), '2019-09-18 17:27:29', '2019-09-18 17:27:29', NULL, 'Come down from your fences, open the gate', UUID_TO_BIN('e7f2dcb2-9c67-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('b1e26862-9c68-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db')),
+    (UUID_TO_BIN('6befab2a-9c69-11ea-b66a-3e16b23d18c0'), '2019-09-19 17:27:20', '2019-09-19 17:27:29', NULL, 'Emmm...', UUID_TO_BIN('e9534fce-9c67-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('b8ff092a-9c68-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0')),
+    (UUID_TO_BIN('87df054c-9c69-11ea-b66a-3e16b23d18c0'), '2019-09-19 17:07:29', '2019-09-19 17:07:29', NULL, 'Hi there', UUID_TO_BIN('fa80a13e-9c67-11ea-b66a-3e16b23d18c0'), NULL, UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db')),
+    (UUID_TO_BIN('91cdd010-9c69-11ea-b66a-3e16b23d18c0'), '2019-09-15 17:24:29', '2019-09-29 17:27:29', NULL, 'Bonjour', UUID_TO_BIN('2d147e18-9c68-11ea-b66a-3e16b23d18c0'), NULL, UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db')),
+    (UUID_TO_BIN('9b846998-9c69-11ea-b66a-3e16b23d18c0'), '2019-09-12 12:24:29', '2019-12-12 17:27:29', NULL, '怎么了', UUID_TO_BIN('2d710bce-9c68-11ea-b66a-3e16b23d18c0'), NULL, UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db')),
+    (UUID_TO_BIN('aa34b9e8-9c69-11ea-b66a-3e16b23d18c0'), '2019-01-15 17:24:29', '2019-02-19 19:27:29', NULL, 'gbd', NULL, NULL, UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0'));
 
 -- ----------------------------
 -- Table structure for comments
 -- ----------------------------
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments`  (
-  `id` varchar(36) NOT NULL,
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  `deleted_at` timestamp(0) NULL DEFAULT NULL,
-  `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `post_id` varchar(36) NOT NULL,
-  `user_id` varchar(36) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
-  FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`)
+    `id` BINARY(16) NOT NULL,
+    `uuid` varchar(36) generated always as (BIN_TO_UUID(id)),
+    `created_at` timestamp(0) NULL DEFAULT NULL,
+    `updated_at` timestamp(0) NULL DEFAULT NULL,
+    `deleted_at` timestamp(0) NULL DEFAULT NULL,
+    `content` text(65535) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+    `post_id` BINARY(16) NOT NULL,
+    `user_id` BINARY(16) NOT NULL,
+    PRIMARY KEY (`id`) USING BTREE,
+    FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
+    FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of comments
 -- ----------------------------
-INSERT INTO `comments` VALUES ('02d3e4c0-9c6a-11ea-b66a-3e16b23d18c0', '2020-01-15 17:24:29', '2020-01-15 17:24:29', NULL, 'Comment 1', 'fbba252e-9c68-11ea-b66a-3e16b23d18c0', '9aa3f102-9bf0-11ea-b66a-3e16b23d18c0');
-INSERT INTO `comments` VALUES ('10b9c80c-9c6a-11ea-b66a-3e16b23d18c0', '2020-01-16 17:24:29', '2020-01-16 17:24:29', NULL, 'Comment 2', 'fbba252e-9c68-11ea-b66a-3e16b23d18c0', '6ccd780c-baba-1026-9564-5b8c656024db');
-INSERT INTO `comments` VALUES ('257460cc-9c6a-11ea-b66a-3e16b23d18c0', '2020-01-15 17:24:29', '2020-02-19 19:27:29', NULL, 'Comment 3', '10b5fe6c-9c69-11ea-b66a-3e16b23d18c0', '6ccd780c-baba-1026-9564-5b8c656024db');
+INSERT INTO `comments`
+    (id, created_at, updated_at, deleted_at, content, post_id, user_id)
+VALUES
+    (UUID_TO_BIN('02d3e4c0-9c6a-11ea-b66a-3e16b23d18c0'), '2020-01-15 17:24:29', '2020-01-15 17:24:29', NULL, 'Comment 1', UUID_TO_BIN('fbba252e-9c68-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0')),
+    (UUID_TO_BIN('10b9c80c-9c6a-11ea-b66a-3e16b23d18c0'), '2020-01-16 17:24:29', '2020-01-16 17:24:29', NULL, 'Comment 2', UUID_TO_BIN('fbba252e-9c68-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db')),
+    (UUID_TO_BIN('257460cc-9c6a-11ea-b66a-3e16b23d18c0'), '2020-01-15 17:24:29', '2020-02-19 19:27:29', NULL, 'Comment 3', UUID_TO_BIN('10b5fe6c-9c69-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db'));
 
 -- ----------------------------
 -- Table structure for user_create_posts
 -- ----------------------------
 DROP TABLE IF EXISTS `user_create_posts`;
 CREATE TABLE `user_create_posts`  (
-  `user_id` varchar(36) NOT NULL,
-  `post_id` varchar(36) NOT NULL,
+  `user_id` BINARY(16) NOT NULL,
+  `post_id` BINARY(16) NOT NULL,
   FOREIGN KEY (`user_id`) REFERENCES sys_users(`id`),
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
@@ -556,23 +570,23 @@ CREATE TABLE `user_create_posts`  (
 -- ----------------------------
 -- Records of user_create_posts
 -- ----------------------------
-INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', 'fbba252e-9c68-11ea-b66a-3e16b23d18c0');
-INSERT INTO `user_create_posts` VALUES ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', '10b5fe6c-9c69-11ea-b66a-3e16b23d18c0');
-INSERT INTO `user_create_posts` VALUES ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', '1d6a1a08-9c69-11ea-b66a-3e16b23d18c0');
-INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', '3f73f0c4-9c69-11ea-b66a-3e16b23d18c0');
-INSERT INTO `user_create_posts` VALUES ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', '6befab2a-9c69-11ea-b66a-3e16b23d18c0');
-INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', '87df054c-9c69-11ea-b66a-3e16b23d18c0');
-INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', '91cdd010-9c69-11ea-b66a-3e16b23d18c0');
-INSERT INTO `user_create_posts` VALUES ('6ccd780c-baba-1026-9564-5b8c656024db', '9b846998-9c69-11ea-b66a-3e16b23d18c0');
-INSERT INTO `user_create_posts` VALUES ('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0', 'aa34b9e8-9c69-11ea-b66a-3e16b23d18c0');
+INSERT INTO `user_create_posts` VALUES (UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db'), UUID_TO_BIN('fbba252e-9c68-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `user_create_posts` VALUES (UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('10b5fe6c-9c69-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `user_create_posts` VALUES (UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('1d6a1a08-9c69-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `user_create_posts` VALUES (UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db'), UUID_TO_BIN('3f73f0c4-9c69-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `user_create_posts` VALUES (UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('6befab2a-9c69-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `user_create_posts` VALUES (UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db'), UUID_TO_BIN('87df054c-9c69-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `user_create_posts` VALUES (UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db'), UUID_TO_BIN('91cdd010-9c69-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `user_create_posts` VALUES (UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db'), UUID_TO_BIN('9b846998-9c69-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `user_create_posts` VALUES (UUID_TO_BIN('9aa3f102-9bf0-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('aa34b9e8-9c69-11ea-b66a-3e16b23d18c0'));
 
 -- ----------------------------
 -- Table structure for post_comments
 -- ----------------------------
 DROP TABLE IF EXISTS `post_comments`;
 CREATE TABLE `post_comments`  (
-  `post_id` varchar(36) NOT NULL,
-  `comment_id` varchar(36) NOT NULL,
+  `post_id` BINARY(16) NOT NULL,
+  `comment_id` BINARY(16) NOT NULL,
   FOREIGN KEY (`post_id`) REFERENCES posts(`id`),
   FOREIGN KEY (`comment_id`) REFERENCES comments(`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
@@ -580,8 +594,8 @@ CREATE TABLE `post_comments`  (
 -- ----------------------------
 -- Records of post_comments
 -- ----------------------------
-INSERT INTO `post_comments` VALUES ('fbba252e-9c68-11ea-b66a-3e16b23d18c0', '02d3e4c0-9c6a-11ea-b66a-3e16b23d18c0');
-INSERT INTO `post_comments` VALUES ('fbba252e-9c68-11ea-b66a-3e16b23d18c0', '10b9c80c-9c6a-11ea-b66a-3e16b23d18c0');
-INSERT INTO `post_comments` VALUES ('10b5fe6c-9c69-11ea-b66a-3e16b23d18c0', '257460cc-9c6a-11ea-b66a-3e16b23d18c0');
+INSERT INTO `post_comments` VALUES (UUID_TO_BIN('fbba252e-9c68-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('02d3e4c0-9c6a-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `post_comments` VALUES (UUID_TO_BIN('fbba252e-9c68-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('10b9c80c-9c6a-11ea-b66a-3e16b23d18c0'));
+INSERT INTO `post_comments` VALUES (UUID_TO_BIN('10b5fe6c-9c69-11ea-b66a-3e16b23d18c0'), UUID_TO_BIN('257460cc-9c6a-11ea-b66a-3e16b23d18c0'));
 
 SET FOREIGN_KEY_CHECKS = 1;
